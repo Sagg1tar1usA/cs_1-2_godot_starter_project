@@ -36,7 +36,8 @@ func _physics_process(_delta):
 	elif yDirection > 0:
 		facing ='down'
 		
-	if velocity.x ==0 and velocity.y ==0
+	if velocity.x ==0 and velocity.y ==0:
+		pass
 	
 
 	# TODO: Calculate X movement by multiplying direction × speed
