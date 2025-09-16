@@ -6,7 +6,6 @@ var xDirection = 0
 var facing = "down"
 var ySpeed = 300.0
 var yDirection = 0
-
 # TODO: Add health system variables
 # var health = ?
 # var maxHealth = ?
@@ -26,12 +25,25 @@ func _physics_process(_delta):
 	# Same idea, but for up and down movement
 	yDirection = Input.get_axis("ui_up", "ui_down")
 	
+	velocity.x= xSpeed * xDirection
+	velocity.y= ySpeed * yDirection
+	if xDirection > 0:
+		facing ="right"
+	elif xDirection < 0:
+		facing = "left"
+	elif yDirection < 0: 
+		facing="up"
+	elif yDirection > 0:
+		facing ='down'
+		
+	if velocity.x ==0 and velocity.y ==0
+	
 
 	# TODO: Calculate X movement by multiplying direction × speed
 	# This gives us the actual pixels to move this frame
 	# If direction is 1 and speed is 300, we get 300 pixels right
 	# If direction is -1 and speed is 300, we get -300 pixels (left)
-	
+
 	
 	# TODO: Calculate Y movement the same way
 	
@@ -45,7 +57,6 @@ func _physics_process(_delta):
 	# Use if statements to check xDirection and yDirection
 	# Set facing to "right", "left", "down", or "up"
 	# Only update facing when actually moving (direction != 0)
-	
 	
 	# TODO: Update animation based on facing direction
 	# Call your update_animation() function here
