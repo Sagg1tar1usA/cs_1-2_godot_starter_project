@@ -37,9 +37,10 @@ func _physics_process(_delta):
 		facing ='down'
 		
 	if velocity.x ==0 and velocity.y ==0:
-		pass
+		_animation_player.play("idle_"+facing) 
 	
-
+	if velocity.x != 0 or velocity.y !=0:
+		_animation_player.play("walk_"+facing)
 	# TODO: Calculate X movement by multiplying direction × speed
 	# This gives us the actual pixels to move this frame
 	# If direction is 1 and speed is 300, we get 300 pixels right
@@ -65,6 +66,10 @@ func _physics_process(_delta):
 	# TODO: Actually apply the movement
 	# This is a special Godot function that makes the movement happen
 	move_and_slide()
+func _on_body_entered(body):
+	if body.name == "player":
+		print('hi')
+
 
 # TODO: Create animation function (add this outside of _physics_process)
 func update_animation():
