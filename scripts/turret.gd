@@ -8,12 +8,12 @@ func _ready():
 func _process(delta: float) -> void:
 	pass
 
-
-	
-
+func shoot (body):
+	pass
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	
+	if body.name == "player":
+		shoot (body)
 	pass # Replace with function body.
 
 

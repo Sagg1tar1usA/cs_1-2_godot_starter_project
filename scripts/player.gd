@@ -8,7 +8,11 @@ var facing = "down"
 var ySpeed = 300.0
 var yDirection = 0
 var coins = 0
+var yCoordinate = 0
+var xCoordinate = 0
 @export var offset : Vector2 = Vector2(0, -25)
+
+
 
 # TODO: Add health system variables
 var maxHealth = 10
