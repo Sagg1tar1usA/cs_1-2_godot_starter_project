@@ -10,6 +10,10 @@ var yDirection = 0
 var coins = 0
 var yCoordinate = 0
 var xCoordinate = 0
+var in_range = false
+var timer = kaboom
+var kaboom = 2 
+var player 
 @export var offset : Vector2 = Vector2(0, -25)
 
 
@@ -89,6 +93,7 @@ func change_coins(_amount:int):
 
 func die():
 	print("you died")
+	queue_free()
 	
 # TODO: Create shooting function
 func shoot():
